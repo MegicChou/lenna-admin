@@ -1,0 +1,41 @@
+{
+    "name": "leya/admin",
+    "description": ":package_description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Author Name",
+            "email": "author@email.com",
+            "homepage": "http://author.com"
+        }
+    ],
+    "homepage": "https://github.com/leya/admin",
+    "keywords": ["Laravel", "Admin"],
+    "require": {
+        "illuminate/support": "~7|~8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~5|~6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Leya\\Admin\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Leya\\Admin\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Leya\\Admin\\AdminServiceProvider"
+            ],
+            "aliases": {
+                "Admin": "Leya\\Admin\\Facades\\Admin"
+            }
+        }
+    }
+}
