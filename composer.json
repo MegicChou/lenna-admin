@@ -1,41 +1,44 @@
 {
-    "name": "leya/admin",
-    "description": ":package_description",
+    "name": "lenna/admin",
+    "description": "laravel admin package",
     "license": "MIT",
     "authors": [
         {
-            "name": "Author Name",
-            "email": "author@email.com",
-            "homepage": "http://author.com"
+            "name": "Chou Yu-Hsien",
+            "email": "slps970093@gmail.com",
+            "homepage": "https://studio.magicchou.com/"
         }
     ],
+    "scripts": {
+        "test": "vendor/bin/phpunit --testdox"
+    },
     "homepage": "https://github.com/leya/admin",
     "keywords": ["Laravel", "Admin"],
     "require": {
-        "illuminate/support": "~7|~8"
+        "illuminate/support": "~7|~8|~9",
+        "spatie/laravel-permission": "^5.4",
+        "rsmalc/laravel-noty": "^2.5",
+        "prettus/l5-repository": "^2.7"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.0",
-        "orchestra/testbench": "~5|~6"
+        "orchestra/testbench": "~5|~6|~7"
     },
     "autoload": {
         "psr-4": {
-            "Leya\\Admin\\": "src/"
+            "Lenna\\Admin\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Leya\\Admin\\Tests\\": "tests"
+            "Lenna\\Admin\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Leya\\Admin\\AdminServiceProvider"
-            ],
-            "aliases": {
-                "Admin": "Leya\\Admin\\Facades\\Admin"
-            }
+                "Lenna\\Admin\\AdminServiceProvider"
+            ]
         }
     }
 }

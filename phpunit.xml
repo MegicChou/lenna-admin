@@ -11,12 +11,12 @@
          stopOnFailure="false">
     <testsuites>
         <testsuite name="Package">
-            <directory suffix=".php">./tests/</directory>
+            <directory suffix="Test.php">./tests/</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist>
+    <coverage processUncoveredFiles="true">
+        <include>
             <directory>src/</directory>
-        </whitelist>
-    </filter>
+        </include>
+    </coverage>
 </phpunit>

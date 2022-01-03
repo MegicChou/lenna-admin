@@ -1,0 +1,36 @@
+on: [push]
+jobs:
+  test:
+    # 选择运行 action 的操作系统
+    runs-on: ubuntu-latest
+
+    strategy:
+      # 策略组中，如果有一个失败了，则快速停止继续运行
+      fail-fast: true
+      matrix:
+        php: [7.4, 8.0, 8.1]
+    # 以上策略设置，可以让代码运行在 php 的三个版本和 laravel 两个版本中的六种组合中
+    # 声明每个策略的名称
+    name: 'PHP ${{ matrix.php }} - unit test'
+
+    steps:
+      - uses: actions/checkout@master
+
+      # 配置php，用变量名指定版本号
+      - name: Select PHP version
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: '${{ matrix.php }}'
+          extensions: mbstring, pdo_sqlite, fileinfo, gd, xdebug
+          coverage: xdebug
+
+      # 配置 laravel 的版本，用变量名指定版本号
+      - name: Install Composer dependencies
+        run: composer install
+
+      - name: Execute tests (Unit and Feature tests) via PHPUnit
+        env:
+          DB_CONNECTION: sqlite
+          DB_DATABASE: database/database.sqlite
+          MOBILE_LIVE_MAP_DOMAIN: api-mobile-streamer.ci.local
+        run: composer run-script test
