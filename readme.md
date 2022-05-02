@@ -1,18 +1,18 @@
-# Admin
+# Lenna Admin
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
 [![StyleCI][ico-styleci]][link-styleci]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
+Laravel 管理後台，支援多用戶與角色管理權限
 
 ## Installation
 
 Via Composer
 
 ``` bash
-$ composer require leya/admin
+$ composer require lanna/admin
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ Please see [contributing.md](contributing.md) for details and a todolist.
 
 ## Security
 
-If you discover any security related issues, please email author@email.com instead of using the issue tracker.
+If you discover any security related issues, please email slps970093@gmail.com instead of using the issue tracker.
 
 ## Credits
 
