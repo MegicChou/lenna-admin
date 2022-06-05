@@ -15,12 +15,12 @@ class RouteLoader
     {
         $attributes = [
             'prefix'     => config('admin.route_prefix','admin'),
-            'middleware' => array_merge(config('admin.middleware',[]),['web','admin']),
+            'middleware' => config('admin.middleware',['web','admin']),
             'as'         => config('admin.route.as','admin.'),
         ];
         app('router')->group($attributes, function ($router) {
             /* @var \Illuminate\Routing\Router $router */
-            $router->namespace("Leya\Admin\Http\Controllers")->group(function ($router) {
+            $router->namespace("Lenna\Admin\Http\Controllers")->group(function ($router) {
                 /* @var \Illuminate\Routing\Router $router */
                 $router->get("role",[RoleController::class,'index'])->name('role.index');
                 $router->get('role/{id}',[RoleController::class,'find'])->name('role.find');

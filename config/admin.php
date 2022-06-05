@@ -51,7 +51,7 @@ return [
     'version'       => "3.1.0",
 
 
-    'middleware'    => [],
+    'middleware'    => ['web','admin'],
 
     'route_files'   => [
     ]
